@@ -1,0 +1,6 @@
+[submodule "dataverse"]
+	path = dataverse
+	url = ../dataverse
+[submodule "dataverse-docker"]
+	path = dataverse-docker
+	url = ../dataverse-docker

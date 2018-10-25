@@ -28,9 +28,8 @@ curl -X PUT -d 10.5072 http://localhost:8080/api/admin/settings/:Authority
 curl -X PUT -d FK2/ http://localhost:8080/api/admin/settings/:Shoulder
 
 # Metadatablocks
-curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/citation.csv -H "Content-type: text/tab-separated-values"
+curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/citation.tsv -H "Content-type: text/tab-separated-values"
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/geospatial.tsv -H "Content-type: text/tab-separated-values"
 
 
 echo
-echo "Please restart domain1"

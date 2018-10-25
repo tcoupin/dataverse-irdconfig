@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:9-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: "secret"
+
+  solr:
+    build: dataverse-docker/solr/
+    ports:
+      - "8983:8983"
+    environment:
+      - "SOLR_HOST=solr"
+    volumes:
+      - solr:/usr/solr/server/collection1
+
+
+  dataverse:
+    build: dataverse-docker/app/
+    ports:
+      - "443:443"
+      - "8080:8080"
+    environment:
+      - "LANG=en"
+    depends_on:
+      - postgres
+      - solr
+    volumes:
+      - dataverse:/usr/local/glassfish4/glassfish/domains/domain1/files
+      - ./config:/dataverse-ird/config
+      - ./dataverse:/dataverse-ird/dataverse
+    working_dir: /dataverse-ird/config
+    command: "bash -c 'asadmin start-domain domain1 && sleep infinity'"
+
+volumes:
+  db:
+  solr:
+  dataverse:
