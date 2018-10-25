@@ -1,9 +1,26 @@
 # dataverse-irdconfig
 Dataverse dev env, with IRD config
 
-Requirements: docker, docker-compose, maven
+This repository includes submodules, to clone:
 
-Makefile targets:
+```
+git clone ...
+git submodule update --init --recursive
+```
+
+To pull:
+
+```
+git pull
+git submodule update --recursive --remote
+```
+
+
+## Requirements
+
+`docker, docker-compose, maven`
+
+## Makefile targets
 
 - `up`: start-up dataverse with last official release
 - `stop`: stop...
