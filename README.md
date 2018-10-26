@@ -29,4 +29,6 @@ git submodule update --recursive --remote
 - `deploy`: deploy builded dataverse into glassfish
 - `config`: apply IRD config
 - `shell`: open an interactive shell in dataverse container
+- `logs`: print follow dataverse logs
+- `shelldb`: open psql client in postgresql container
 - `clean`: cleanup maven target dir

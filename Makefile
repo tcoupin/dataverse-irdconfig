@@ -1,4 +1,4 @@
-.PHONY: up stop down build deploy config clean shell
+.PHONY: up stop down build deploy config clean shell shelldb logs
 
 up:
 	docker-compose up -d
@@ -21,3 +21,7 @@ clean:
 
 shell:
 	docker-compose exec dataverse bash
+shelldb:
+	docker-compose exec -u postgres postgres psql dvndb
+logs:
+	docker-compose exec dataverse tail -f /opt/glassfish4/glassfish/domains/domain1/logs/server.log
