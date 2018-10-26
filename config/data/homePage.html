@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Homepage Data IRD</title>
+    </head>
+    <body>
+        <h1>Homepage Data IRD</h1>
+        <a href="/dataverse/root">Lien vers dataverse</a><br>
+        Redirection automatique dans <span id="second"></span>s...
+        <script type="text/javascript">
+        var delay=5
+        function next(){
+            document.getElementById('second').innerHTML = delay;
+            if (delay == 0) {
+                window.location.pathname = "/dataverse/root"
+            } else {
+                delay--
+            }
+        }
+        setInterval(next,1000)
+        </script>
+    </body>
+</html>

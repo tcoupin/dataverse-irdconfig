@@ -32,4 +32,17 @@ curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/geospatial.tsv -H "Content-type: text/tab-separated-values"
 
 
+# Branding
+curl -X PUT -d  "$(dirname $0)/data/homePage.html" http://localhost:8080/api/admin/settings/:HomePageCustomizationFile
+
+mkdir -p /opt/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/
+cp -f $(dirname $0)/data/logo_IRD.png /opt/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/logo.png
+curl -X PUT -d '/logos/navbar/logo.png' http://localhost:8080/api/admin/settings/:LogoCustomizationFile
+
+curl -X PUT -d "$(dirname $0)/data/header.html" http://localhost:8080/api/admin/settings/:HeaderCustomizationFile
+
+curl -X PUT -d 'true' http://localhost:8080/api/admin/settings/:DisableRootDataverseTheme # ne pas afficher le nom, le logo du dataverse root
+
+curl -X PUT -d "$(dirname $0)/data/footer.html" http://localhost:8080/api/admin/settings/:FooterCustomizationFile
+
 echo
