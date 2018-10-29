@@ -1,27 +1,30 @@
 .PHONY: up stop down build deploy config clean shell shelldb logs
 
-up:
+up: ## Create and start containers
 	docker-compose up -d
-stop:
+stop: ## Stop containers
 	docker-compose stop
-down:
+down: ## Drop containers and volumes
 	docker-compose down -v
 
-build:
+build: ## Build builded dataverse
 	cd dataverse && mvn -DskipTests package
 
-deploy:
+deploy: ## Deploy dataverse
 	docker-compose exec dataverse bash /dataverse-ird/config/reDeploy.sh '/dataverse-ird/dataverse/target/dataverse*.war'
 
-config:
+config: ## Run config scripts
 	docker-compose exec dataverse bash /dataverse-ird/config/configMe.sh
 
-clean:
+clean: ## Cleanup build dir
 	rm -rf dataverse/target
 
-shell:
+shell: ## Open an interactive shell in dataverse container
 	docker-compose exec dataverse bash
-shelldb:
+shelldb: ## Open psql client in postgresql container
 	docker-compose exec -u postgres postgres psql dvndb
-logs:
+logs: ## Print and follow dataverse logs
 	docker-compose exec dataverse tail -f /opt/glassfish4/glassfish/domains/domain1/logs/server.log
+
+help: ## this help
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {sub("\\\\n",sprintf("\n%22c"," "), $$2);printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
