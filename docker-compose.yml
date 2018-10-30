@@ -37,7 +37,16 @@ services:
     working_dir: /dataverse-ird/config
     command: "bash -c 'asadmin start-domain domain1 && sleep infinity'"
 
+  builder:
+    image: maven:3-jdk-8-alpine
+    volumes:
+      - ./dataverse/:/dataverse
+      - maven:/root/.m2
+    working_dir: /dataverse
+    command: sleep 1000d
+
 volumes:
   db:
   solr:
   dataverse:
+  maven:

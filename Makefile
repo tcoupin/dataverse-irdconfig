@@ -8,7 +8,7 @@ down: ## Drop containers and volumes
 	docker-compose down -v
 
 build: ## Build builded dataverse
-	cd dataverse && mvn -DskipTests package
+	docker-compose exec builder mvn -DskipTests package
 
 deploy: ## Deploy dataverse
 	docker-compose exec dataverse bash /dataverse-ird/config/reDeploy.sh '/dataverse-ird/dataverse/target/dataverse*.war'

@@ -18,7 +18,7 @@ git submodule update --recursive --remote
 
 ## Requirements
 
-`docker, docker-compose, maven`
+`docker, docker-compose`
 
 ## Makefile targets
 
