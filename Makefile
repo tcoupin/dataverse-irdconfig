@@ -17,7 +17,7 @@ config: ## Run config scripts
 	docker-compose exec dataverse bash /dataverse-ird/config/configMe.sh
 
 clean: ## Cleanup build dir
-	rm -rf dataverse/target
+	docker-compose exec builder rm -rf target
 
 shell: ## Open an interactive shell in dataverse container
 	docker-compose exec dataverse bash
