@@ -28,7 +28,6 @@ curl -X PUT -d 10.5072 http://localhost:8080/api/admin/settings/:Authority
 curl -X PUT -d FK2/ http://localhost:8080/api/admin/settings/:Shoulder
 
 # Metadatablocks
-curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/citation.tsv -H "Content-type: text/tab-separated-values"
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/geospatial.tsv -H "Content-type: text/tab-separated-values"
 
 
@@ -44,5 +43,19 @@ curl -X PUT -d "$(dirname $0)/data/header.html" http://localhost:8080/api/admin/
 curl -X PUT -d 'true' http://localhost:8080/api/admin/settings/:DisableRootDataverseTheme # ne pas afficher le nom, le logo du dataverse root
 
 curl -X PUT -d "$(dirname $0)/data/footer.html" http://localhost:8080/api/admin/settings/:FooterCustomizationFile
+
+curl -X PUT -d ", Institut de Recherche pour le Développement" http://localhost:8080/api/admin/settings/:FooterCopyright
+ curl -X PUT -d https://dvwiki.ird.fr http://localhost:8080/api/admin/settings/:GuidesBaseUrl
+ curl -X PUT -d "4.9.4" http://localhost:8080/api/admin/settings/:GuidesVersion
+
+#NavbarAbout URL ?
+#StatusMessageHeader
+curl -X PUT -d "For testing only..." http://localhost:8080/api/admin/settings/:StatusMessageHeader
+#StatusMessageText
+curl -X PUT -d "This appears in a popup." http://localhost:8080/api/admin/settings/:StatusMessageText
+#:NavbarAboutUrl
+curl -X PUT -d https://dvwiki.ird.fr http://localhost:8080/api/admin/settings/:NavbarAboutUrl
+
+ curl -X PUT -d https://dvwiki.ird.fr/doku.php http://localhost:8080/api/admin/settings/:ApplicationPrivacyPolicyUrl
 
 echo

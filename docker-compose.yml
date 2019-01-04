@@ -17,7 +17,7 @@ services:
     environment:
       - "SOLR_HOST=solr"
     volumes:
-      - solr:/usr/solr/server/collection1
+      - solr:/opt/solr/server/solr/collection1
 
 
   dataverse:
