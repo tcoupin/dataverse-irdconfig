@@ -1,0 +1,8 @@
+{
+    "alias":"publisher",
+    "name":"Publisher",
+    "description":"A person who can publish datasets.",
+    "permissions":[
+        "PublishDataset"
+    ]
+}
