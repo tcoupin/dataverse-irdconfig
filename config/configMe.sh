@@ -6,7 +6,7 @@ updateJVMOption dataverse.siteUrl http://localhost:8080
 
 
 # Config dropdown language in header
-curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":"en", "title":"English"}, { "locale":"fr", "title":"Français"}]'
+curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":"fr", "title":"Français"},{ "locale":"en", "title":"English"}]'
 
 
 # DOI
