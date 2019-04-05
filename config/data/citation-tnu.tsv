@@ -319,48 +319,48 @@
 	language	Zhuang, Chuang		183													
 	language	Zulu		184													
 	language	Not applicable		185													
-	topicClassValue	Generalities	tnu:010	0													
-	topicClassValue	Fundamental sciences/Analysis and research techniques	tnu:020	1													
-	topicClassValue	Environmental sciences	tnu:021	2													
-	topicClassValue	Limnology/Oceanography: generalities	tnu:030	3													
-	topicClassValue	Physical limnology/Physical oceanography	tnu:032	4													
-	topicClassValue	Bilogical limnology/Biological oceanography	tnu:034	5													
-	topicClassValue	Natural substances	tnu:035	6													
-	topicClassValue	Ecology, aquatic systems	tnu:036	7													
-	topicClassValue	Pollution	tnu:038	8													
-	topicClassValue	Halieutic resources	tnu:040	9													
-	topicClassValue	Health: generalities	tnu:050	10													
-	topicClassValue	Medical entomology/Parasitology/Virology	tnu:052	11													
-	topicClassValue	Nutrition	tnu:054	12													
-	topicClassValue	Health: sociocultural, economic and political aspects	tnu:056	13													
-	topicClassValue	Earth sciences: generalities	tnu:060	14													
-	topicClassValue	Hydrology	tnu:062	15													
-	topicClassValue	Geology and surficial geology	tnu:064	16													
-	topicClassValue	Internal geophysics	tnu:066	17													
-	topicClassValue	Soil science	tnu:068	18													
-	topicClassValue	Plant and animal world: generalities	tnu:070	19													
-	topicClassValue	Bioclimatology	tnu:072	20													
-	topicClassValue	Soil biology	tnu:074	21													
-	topicClassValue	Plant science	tnu:076	22													
-	topicClassValue	Animal science	tnu:080	23													
-	topicClassValue	Studies, transformation, preservation of the natural environment	tnu:082	24													
-	topicClassValue	Biotechnologies	tnu:084	25													
-	topicClassValue	General economy/Macroeconomics	tnu:094	26													
-	topicClassValue	Economic development/Land development	tnu:095	27													
-	topicClassValue	Economy: sectors of activity	tnu:096	28													
-	topicClassValue	Economy and rural sociology	tnu:098	29													
-	topicClassValue	Work	tnu:100	30													
-	topicClassValue	Urbanization and urban societies	tnu:102	31													
-	topicClassValue	Society, social development	tnu:106	32													
-	topicClassValue	Demography	tnu:108	33													
-	topicClassValue	Societies, cultural development	tnu:112	34													
-	topicClassValue	Politics	tnu:114	35													
-	topicClassValue	Scientific and technical development	tnu:116	36													
-	topicClassValue	Engineering  sciences: generalities	tnu:120	37													
-	topicClassValue	Computer science	tnu:122	38													
-	topicClassValue	Documentation	tnu:124	39													
-	topicClassValue	Remote sensing	tnu:126	40													
-	topicClassValue	Cartography/Graphical methods	tnu:128	41													
+	topicClassValue	Animal science	tnu:080	0
+	topicClassValue	Bilogical limnology/Biological oceanography	tnu:034	1
+	topicClassValue	Bioclimatology	tnu:072	2
+	topicClassValue	Biotechnologies	tnu:084	3
+	topicClassValue	Cartography/Graphical methods	tnu:128	4
+	topicClassValue	Computer science	tnu:122	5
+	topicClassValue	Demography	tnu:108	6
+	topicClassValue	Documentation	tnu:124	7
+	topicClassValue	Earth sciences: generalities	tnu:060	8
+	topicClassValue	Ecology, aquatic systems	tnu:036	9
+	topicClassValue	Economic development/Land development	tnu:095	10
+	topicClassValue	Economy and rural sociology	tnu:098	11
+	topicClassValue	Economy: sectors of activity	tnu:096	12
+	topicClassValue	Engineering  sciences: generalities	tnu:120	13
+	topicClassValue	Environmental sciences	tnu:021	14
+	topicClassValue	Fundamental sciences/Analysis and research techniques	tnu:020	15
+	topicClassValue	General economy/Macroeconomics	tnu:094	16
+	topicClassValue	Generalities	tnu:010	17
+	topicClassValue	Geology and surficial geology	tnu:064	18
+	topicClassValue	Halieutic resources	tnu:040	19
+	topicClassValue	Health: generalities	tnu:050	20
+	topicClassValue	Health: sociocultural, economic and political aspects	tnu:056	21
+	topicClassValue	Hydrology	tnu:062	22
+	topicClassValue	Internal geophysics	tnu:066	23
+	topicClassValue	Limnology/Oceanography: generalities	tnu:030	24
+	topicClassValue	Medical entomology/Parasitology/Virology	tnu:052	25
+	topicClassValue	Natural substances	tnu:035	26
+	topicClassValue	Nutrition	tnu:054	27
+	topicClassValue	Physical limnology/Physical oceanography	tnu:032	28
+	topicClassValue	Plant and animal world: generalities	tnu:070	29
+	topicClassValue	Plant science	tnu:076	30
+	topicClassValue	Politics	tnu:114	31
+	topicClassValue	Pollution	tnu:038	32
+	topicClassValue	Remote sensing	tnu:126	33
+	topicClassValue	Scientific and technical development	tnu:116	34
+	topicClassValue	Societies, cultural development	tnu:112	35
+	topicClassValue	Society, social development	tnu:106	36
+	topicClassValue	Soil biology	tnu:074	37
+	topicClassValue	Soil science	tnu:068	38
+	topicClassValue	Studies, transformation, preservation of the natural environment	tnu:082	39
+	topicClassValue	Urbanization and urban societies	tnu:102	40
+	topicClassValue	Work	tnu:100	41
 	kindOfData	Experimental data		0
 	kindOfData	Aggregate data		1
 	kindOfData	Analysis data		2
