@@ -63,4 +63,6 @@ curl -X PUT -d https://data.ird.fr http://localhost:8080/api/admin/settings/:Nav
 
 curl -X PUT -d https://data.ird.fr http://localhost:8080/api/admin/settings/:ApplicationPrivacyPolicyUrl
 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/authenticationProviders -d '{"id":"shib","factoryAlias":"shib","enabled":true}'
+
 echo
