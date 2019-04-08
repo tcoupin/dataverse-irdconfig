@@ -47,8 +47,7 @@ curl -X PUT -d '/logos/navbar/logo.png' http://localhost:8080/api/admin/settings
 
 #curl -X PUT -d "$(dirname $0)/data/footer.html" http://localhost:8080/api/admin/settings/:FooterCustomizationFile
 
-curl -X PUT -d ", Institut de Recherche pour le Développement" http://localhost:8080/api/admin/settings/:FooterCopyright
-#curl -X PUT -d https://dvwiki.ird.fr http://localhost:8080/api/admin/settings/:GuidesBaseUrl
+curl -X PUT -d " - <a href='https://www.ird.fr' target='_blank'>IRD - Institut de recherche pour le développement - FRANCE</a>" http://localhost:8080/api/admin/settings/:FooterCopyright
 
 VERSION=$(cat $(dirname $0)/../dataverse/pom.xml| grep '<version>' | head -n 1 | sed "s#^[^>]*>##g" | sed 's#<[^<]*$##g' | sed 's#-IRD[0-9]*##g')
 curl -X PUT -d "$VERSION" http://localhost:8080/api/admin/settings/:GuidesVersion
@@ -64,5 +63,7 @@ curl -X PUT -d https://data.ird.fr http://localhost:8080/api/admin/settings/:Nav
 curl -X PUT -d https://data.ird.fr http://localhost:8080/api/admin/settings/:ApplicationPrivacyPolicyUrl
 
 curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/authenticationProviders -d '{"id":"shib","factoryAlias":"shib","enabled":true}'
+
+curl -X PUT -d 'Administrateur des données IRD <data@ird.fr>' http://localhost:8080/api/admin/settings/:SystemEmail
 
 echo

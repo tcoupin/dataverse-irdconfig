@@ -320,35 +320,35 @@
 	language	Zulu		184													
 	language	Not applicable		185													
 	topicClassValue	Animal science	tnu:080	0
-	topicClassValue	Bilogical limnology/Biological oceanography	tnu:034	1
+	topicClassValue	Bilogical limnology and biological oceanography	tnu:034	1
 	topicClassValue	Bioclimatology	tnu:072	2
 	topicClassValue	Biotechnologies	tnu:084	3
-	topicClassValue	Cartography/Graphical methods	tnu:128	4
+	topicClassValue	Cartography, graphical methods	tnu:128	4
 	topicClassValue	Computer science	tnu:122	5
 	topicClassValue	Demography	tnu:108	6
 	topicClassValue	Documentation	tnu:124	7
-	topicClassValue	Earth sciences: generalities	tnu:060	8
+	topicClassValue	Earth sciences, generalities	tnu:060	8
 	topicClassValue	Ecology, aquatic systems	tnu:036	9
-	topicClassValue	Economic development/Land development	tnu:095	10
+	topicClassValue	Economic development and land development	tnu:095	10
 	topicClassValue	Economy and rural sociology	tnu:098	11
-	topicClassValue	Economy: sectors of activity	tnu:096	12
-	topicClassValue	Engineering  sciences: generalities	tnu:120	13
+	topicClassValue	Economy and sectors of activity	tnu:096	12
+	topicClassValue	Engineering  sciences, generalities	tnu:120	13
 	topicClassValue	Environmental sciences	tnu:021	14
-	topicClassValue	Fundamental sciences/Analysis and research techniques	tnu:020	15
-	topicClassValue	General economy/Macroeconomics	tnu:094	16
+	topicClassValue	Fundamental sciences, analysis and research techniques	tnu:020	15
+	topicClassValue	General economy, macroeconomics	tnu:094	16
 	topicClassValue	Generalities	tnu:010	17
-	topicClassValue	Geology and surficial geology	tnu:064	18
+	topicClassValue	Geology, surficial geology	tnu:064	18
 	topicClassValue	Halieutic resources	tnu:040	19
-	topicClassValue	Health: generalities	tnu:050	20
-	topicClassValue	Health: sociocultural, economic and political aspects	tnu:056	21
+	topicClassValue	Health  generalities	tnu:050	20
+	topicClassValue	Health in sociocultural, economic and political aspects	tnu:056	21
 	topicClassValue	Hydrology	tnu:062	22
 	topicClassValue	Internal geophysics	tnu:066	23
-	topicClassValue	Limnology/Oceanography: generalities	tnu:030	24
-	topicClassValue	Medical entomology/Parasitology/Virology	tnu:052	25
+	topicClassValue	Limnology and oceanography: generalities	tnu:030	24
+	topicClassValue	Medical entomology, parasitology and virology	tnu:052	25
 	topicClassValue	Natural substances	tnu:035	26
 	topicClassValue	Nutrition	tnu:054	27
-	topicClassValue	Physical limnology/Physical oceanography	tnu:032	28
-	topicClassValue	Plant and animal world: generalities	tnu:070	29
+	topicClassValue	Physical limnology and physical oceanography	tnu:032	28
+	topicClassValue	Plant and animal world, generalities	tnu:070	29
 	topicClassValue	Plant science	tnu:076	30
 	topicClassValue	Politics	tnu:114	31
 	topicClassValue	Pollution	tnu:038	32
