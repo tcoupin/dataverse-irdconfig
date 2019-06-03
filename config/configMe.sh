@@ -6,6 +6,9 @@ updateJVMOption dataverse.siteUrl http://localhost:8080
 
 
 # Config dropdown language in header
+mkdir -p /local_language
+find /language -name "*.properties" -exec cp {} /local_language \;
+updateJVMOption dataverse.lang.directory /local_language
 curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":"fr", "title":"Français"},{ "locale":"en", "title":"English"}]'
 
 

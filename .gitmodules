@@ -4,3 +4,6 @@
 [submodule "dataverse-docker"]
 	path = dataverse-docker
 	url = ../dataverse-docker
+[submodule "dataverse-language-packs"]
+	path = dataverse-language-packs
+	url = ../dataverse-language-packs
