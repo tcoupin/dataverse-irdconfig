@@ -4,6 +4,7 @@ source $(dirname $0)/utils.sh
 updateJVMOption dataverse.fqdn localhost
 updateJVMOption dataverse.siteUrl http://localhost:8080
 
+asadmin set-log-levels edu.harvard.iq.dataverse=FINE
 
 # Config dropdown language in header
 mkdir -p /local_language
@@ -16,19 +17,21 @@ curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":
 echo
 read -p "Datacite username:" DATACITE_USERNAME
 read -s -p "Datacite password:"  DATACITE_PASSWORD
+read -p "Datacite prefix:" DATACITE_PREFIX
 echo
-updateJVMOption doi.baseurlstring https://mds.datacite.org/
+
+updateJVMOption doi.baseurlstring https://mds.test.datacite.org/
 
 if [[ "$DATACITE_USERNAME" != "" ]]
 then
     updateJVMOption doi.username $DATACITE_USERNAME
     updateJVMOption doi.password $DATACITE_PASSWORD
+    curl -X PUT -d $DATACITE_PREFIX http://localhost:8080/api/admin/settings/:Authority
 fi
 
 curl -X PUT -d DataCite http://localhost:8080/api/admin/settings/:DoiProvider
 curl -X PUT -d doi http://localhost:8080/api/admin/settings/:Protocol
-curl -X PUT -d 10.5072 http://localhost:8080/api/admin/settings/:Authority
-curl -X PUT -d FK2/ http://localhost:8080/api/admin/settings/:Shoulder
+curl -X PUT -d DVLOCAL/ http://localhost:8080/api/admin/settings/:Shoulder
 
 # Metadatablocks
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/citation-tnu.tsv -H "Content-type: text/tab-separated-values"
@@ -39,6 +42,9 @@ curl -H "Content-type:application/json" -d @$(dirname $0)/data/role-publisher.js
 
 # Branding
 #curl -X PUT -d  "$(dirname $0)/data/homePage.html" http://localhost:8080/api/admin/settings/:HomePageCustomizationFile
+
+# CSS
+curl -X PUT -d "$(dirname $0)/data/style.css" http://localhost:8080/api/admin/settings/:StyleCustomizationFile
 
 mkdir -p /opt/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/
 cp -f $(dirname $0)/data/logo_IRD.png /opt/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/logo.png
@@ -67,6 +73,6 @@ curl -X PUT -d https://data.ird.fr http://localhost:8080/api/admin/settings/:App
 
 curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/authenticationProviders -d '{"id":"shib","factoryAlias":"shib","enabled":true}'
 
-curl -X PUT -d 'Administrateur des données IRD <data@ird.fr>' http://localhost:8080/api/admin/settings/:SystemEmail
+curl -X PUT -d 'Administrateur des donnees IRD <data@ird.fr>' http://localhost:8080/api/admin/settings/:SystemEmail
 
 echo
