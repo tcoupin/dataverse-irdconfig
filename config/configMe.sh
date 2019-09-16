@@ -8,13 +8,19 @@ asadmin set-log-levels edu.harvard.iq.dataverse=FINE
 
 # Config dropdown language in header
 mkdir -p /local_language
-find /language -name "*.properties" -exec cp {} /local_language \;
+rm -rf /local_language/*
+
+LANGUAGE="fr_FR en_US"
+for lang in $LANGUAGE; do
+    lang_dir=$(find /language/ -name $lang -printf "%d %p\n"|sort -n | tail -n 1 | awk '{print $2}')
+    find $lang_dir -name "*.properties" -exec cp {} /local_language \;
+done
 updateJVMOption dataverse.lang.directory /local_language
 curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":"fr", "title":"Français"},{ "locale":"en", "title":"English"}]'
-
+echo
 
 # DOI
-echo
+echo "Datacite test platform credentials (doi.test.datacite.org)"
 read -p "Datacite username:" DATACITE_USERNAME
 read -s -p "Datacite password:"  DATACITE_PASSWORD
 read -p "Datacite prefix:" DATACITE_PREFIX

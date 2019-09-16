@@ -1,5 +1,7 @@
 .PHONY: up stop down build deploy config clean shell shelldb logs
 
+default: help
+
 up: ## Create and start containers
 	docker-compose up -d
 stop: ## Stop containers
