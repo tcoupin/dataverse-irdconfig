@@ -6,6 +6,8 @@ up: ## Create and start containers
 	docker-compose up -d
 stop: ## Stop containers
 	docker-compose stop
+restart: ## Restart dataverse only
+	docker-compose restart dataverse
 down: ## Drop containers and volumes
 	docker-compose down -v
 

@@ -13,6 +13,7 @@ rm -rf /local_language/*
 LANGUAGE="fr_FR en_US"
 for lang in $LANGUAGE; do
     lang_dir=$(find /language/ -name $lang -printf "%d %p\n"|sort -n | tail -n 1 | awk '{print $2}')
+    find $lang_dir -name "*.properties"
     find $lang_dir -name "*.properties" -exec cp {} /local_language \;
 done
 updateJVMOption dataverse.lang.directory /local_language
@@ -42,7 +43,7 @@ curl -X PUT -d DVLOCAL/ http://localhost:8080/api/admin/settings/:Shoulder
 # Metadatablocks
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/citation-tnu.tsv -H "Content-type: text/tab-separated-values"
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/geospatial.tsv -H "Content-type: text/tab-separated-values"
-
+exit
 # Add role publisher
 curl -H "Content-type:application/json" -d @$(dirname $0)/data/role-publisher.json http://localhost:8080/api/admin/roles/
 
