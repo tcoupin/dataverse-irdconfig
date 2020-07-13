@@ -19,11 +19,18 @@ services:
     volumes:
       - solr:/opt/solr/server/solr/collection1
 
+  lb:
+    image: nginx:alpine
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - "./config/nginx/docker-entrypoint.d:/docker-entrypoint.d/:ro"
+      - "./config/nginx/etc/nginx/conf.d:/etc/nginx/conf.d/:ro"
 
   dataverse:
     build: dataverse-docker/app/
     ports:
-      - "443:443"
       - "8080:8080"
     environment:
       - "LANG=en"
@@ -32,16 +39,16 @@ services:
       - solr
     volumes:
       - dataverse:/opt/glassfish4/glassfish/domains/domain1/files
-      - ./config:/dataverse-ird/config
-      - ./dataverse:/dataverse-ird/dataverse
-      - ./dataverse-language-packs:/language
+      - ./config:/dataverse-ird/config:cached
+      - ./dataverse:/dataverse-ird/dataverse:cached
+      - ./dataverse-language-packs:/language:cached
     working_dir: /dataverse-ird/config
     command: "bash -c 'asadmin start-domain domain1 && sleep infinity'"
 
   builder:
     image: maven:3-jdk-8-alpine
     volumes:
-      - ./dataverse/:/dataverse
+      - ./dataverse/:/dataverse:cached
       - maven:/root/.m2
     working_dir: /dataverse
     command: sleep 1000d

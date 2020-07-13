@@ -1,44 +1,39 @@
 <style>
-    /* NOTE: You can use the custom CSS configuration to move this CSS your own stylesheet. */
 
-    /* Overwrite default footer styles to make room at the bottom of the browser page for our custom footer... */
-    html, body {
-        height: 100%;
-    }
-    #content.container {
-        min-height: calc(100% - 210px);
-        margin-bottom: -142px; 
-    }
-    #content.container:after {
-        content: "";
-        display: block;
-    }
-    #footer {
-            color: aliceblue;
-            margin-top:0px; padding-bottom:0px; bottom:-130px; position: relative;
-    }
-    
-    /* Place custom footer just above default footer at the bottom of the page... */
-    #custom-footer, #content.container:after {
-        height: 142px; 
-    }
-    #custom-footer {
-        background: #1b71b8;
-        color: aliceblue;
-        min-height: 100px; padding: 1.25em 0 100px 0;
-    }
-    #custom-footer a {
-        color: #fff;
-    }
-    #footer a {
-        color: #fff;
-    }
+
 </style>
 <div id="custom-footer">
-    <div class="container">
-        <p>SAMPLE FOOTER TEXT</p>
-        <p class="small">
-                <a href="https://dataverse.org" title="SAMPLE LINK" target="_blank">SAMPLE LINK</a>
-            </p>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="cookieModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="cookieModalLabel">Cookies</h4>
+        </div>
+        <div class="modal-body">
+            Ce site utilise des cookies lors de l'authentification et pour de la mesure d'audience via Google Analytics.<br>
+            En cliquant sur le bouton "Accepter", vous nous autorisez à déposer ces cookies.
+            <hr>
+            This site uses cookies during authentication and for audience measurement using Google Analytics. <br>
+            By clicking on the "Accept" button, you authorize us to use these cookies.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Accepter / Accept</button>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <script>
+      $(function(){
+          if (localStorage.getItem("dataversecookie") !== "accept" ){
+            $('#cookieModal').modal('show')
+            $('#cookieModal .modal-footer button').click(function(){
+                localStorage.setItem("dataversecookie", "accept")
+                $('#cookieModal').modal('hide')
+            })
+          }
+      })
+  </script>
 </div>

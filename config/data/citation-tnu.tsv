@@ -29,10 +29,10 @@
 	topicClassValue	 	Topic or Subject term that is relevant to this Dataset.		text	25	#VALUE	TRUE	TRUE	FALSE	TRUE	TRUE	FALSE	topicClassification	citation		
 	topicClassVocab	Vocabulary	Provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc.		text	26	(#VALUE)	FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	topicClassification	citation		
 	topicClassVocabURI	Vocabulary URL	Specifies the URL location for the full controlled vocabulary.	Enter full URL, starting with http://	url	27	<a href="#VALUE" target="_blank" rel="noopener">#VALUE</a>	FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	topicClassification	citation		
-	publication	Related Publication	Publications that use the data from this Dataset.		none	28		FALSE	FALSE	TRUE	FALSE	TRUE	FALSE		citation	http://purl.org/dc/terms/isReferencedBy	
+	publication	Related Publication	Publications that use the data from this Dataset. The full list of Related Publications will be displayed on the metadata tab.		none	28		FALSE	FALSE	TRUE	FALSE	TRUE	FALSE		citation	http://purl.org/dc/terms/isReferencedBy	
 	publicationCitation	Citation	The full bibliographic citation for this related publication.		textbox	29	#VALUE	TRUE	FALSE	FALSE	FALSE	TRUE	FALSE	publication	citation	http://purl.org/dc/terms/bibliographicCitation	
 	publicationIDType	ID Type	The type of digital identifier used for this publication (e.g., Digital Object Identifier (DOI)).		text	30	#VALUE: 	TRUE	TRUE	FALSE	FALSE	TRUE	FALSE	publication	citation	http://purl.org/spar/datacite/ResourceIdentifierScheme	
-	publicationIDNumber	ID Number	The identifier for the selected ID type.		text	31	#VALUE	TRUE	FALSE	FALSE	FALSE	TRUE	FALSE	publication	citation		http://purl.org/spar/datacite/ResourceIdentifier
+	publicationIDNumber	ID Number	The identifier for the selected ID type.		text	31	#VALUE	TRUE	FALSE	FALSE	FALSE	TRUE	FALSE	publication	citation	http://purl.org/spar/datacite/ResourceIdentifier
 	publicationURL	URL	Link to the publication web page (e.g., journal article page, archive record page, or other).	Enter full URL, starting with http://	url	32	<a href="#VALUE" target="_blank">#VALUE</a>	FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	publication	citation	https://schema.org/distribution	
 	notesText	Notes	Additional important information about the Dataset.		textbox	33		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE		citation		
 	language	Language	Language of the Dataset		text	34		TRUE	TRUE	TRUE	TRUE	FALSE	FALSE		citation	http://purl.org/dc/terms/language	
@@ -41,7 +41,7 @@
 	producerAffiliation	Affiliation	The organization with which the producer is affiliated.		text	37	(#VALUE)	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	producer	citation		
 	producerAbbreviation	Abbreviation	The abbreviation by which the producer is commonly known. (ex. IQSS, ICPSR)		text	38	(#VALUE)	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	producer	citation		
 	producerURL	URL	Producer URL points to the producer's web presence, if appropriate. Enter an absolute URL where the producer's web site is found, such as http://www.my.org.  	Enter full URL, starting with http://	url	39	<a href="#VALUE" target="_blank" rel="noopener">#VALUE</a>	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	producer	citation		
-	producerLogoURL	Logo URL	URL for the producer's logo, which points to this  producer's web-accessible logo image. Enter an absolute URL where the producer's logo image is found, such as http://www.my.org/images/logo.gif.	Enter full URL for image, starting with http://	url	40	"<img src=""#VALUE"" alt=""#NAME"" class=""metadata-logo""/><br/>"	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	producer	citation		
+	producerLogoURL	Logo URL	URL for the producer's logo, which points to this  producer's web-accessible logo image. Enter an absolute URL where the producer's logo image is found, such as http://www.my.org/images/logo.gif.	Enter full URL for image, starting with http://	url	40	<img src="#VALUE" alt="#NAME" class="metadata-logo"/><br/>	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	producer	citation		
 	productionDate	Production Date	Date when the data collection or other materials were produced (not distributed, published or archived).	YYYY-MM-DD	date	41		TRUE	FALSE	FALSE	TRUE	FALSE	FALSE		citation		
 	productionPlace	Production Place	The location where the data collection and any other related materials were produced.		text	42		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		citation		
 	contributor	Contributor	The organization or person responsible for either collecting, managing, or otherwise contributing in some form to the development of the resource.		none	43	:	FALSE	FALSE	TRUE	FALSE	FALSE	FALSE		citation	http://purl.org/dc/terms/contributor	
@@ -55,7 +55,7 @@
 	distributorAffiliation	Affiliation	The organization with which the distributor contact is affiliated.		text	51	(#VALUE)	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	distributor	citation		
 	distributorAbbreviation	Abbreviation	The abbreviation by which this distributor is commonly known (e.g., IQSS, ICPSR).		text	52	(#VALUE)	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	distributor	citation		
 	distributorURL	URL	Distributor URL points to the distributor's web presence, if appropriate. Enter an absolute URL where the distributor's web site is found, such as http://www.my.org.	Enter full URL, starting with http://	url	53	<a href="#VALUE" target="_blank" rel="noopener">#VALUE</a>	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	distributor	citation		
-	distributorLogoURL	Logo URL	URL of the distributor's logo, which points to this  distributor's web-accessible logo image. Enter an absolute URL where the distributor's logo image is found, such as http://www.my.org/images/logo.gif.	Enter full URL for image, starting with http://	url	54	"<img src=""#VALUE"" alt=""#NAME"" class=""metadata-logo""/><br/>"	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	distributor	citation		
+	distributorLogoURL	Logo URL	URL of the distributor's logo, which points to this  distributor's web-accessible logo image. Enter an absolute URL where the distributor's logo image is found, such as http://www.my.org/images/logo.gif.	Enter full URL for image, starting with http://	url	54	<img src="#VALUE" alt="#NAME" class="metadata-logo"/><br/>	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	distributor	citation		
 	distributionDate	Distribution Date	Date that the work was made available for distribution/presentation.	YYYY-MM-DD	date	55		TRUE	FALSE	FALSE	TRUE	FALSE	FALSE		citation		
 	depositor	Depositor	The person (Family Name, Given Name) or the name of the organization that deposited this Dataset to the repository.		text	56		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		citation		
 	dateOfDeposit	Deposit Date	Date that the Dataset was deposited into the repository.	YYYY-MM-DD	date	57		FALSE	FALSE	FALSE	TRUE	FALSE	FALSE		citation	http://purl.org/dc/terms/dateSubmitted	
@@ -65,7 +65,7 @@
 	dateOfCollection	Date of Collection	Contains the date(s) when the data were collected.		none	61	";"	FALSE	FALSE	TRUE	FALSE	FALSE	FALSE		citation		
 	dateOfCollectionStart	Start	Date when the data collection started.	YYYY-MM-DD	date	62	#NAME: #VALUE 	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	dateOfCollection	citation		
 	dateOfCollectionEnd	End	Date when the data collection ended.	YYYY-MM-DD	date	63	#NAME: #VALUE 	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	dateOfCollection	citation		
-	kindOfData	Kind of Data	Type of data included in the file: experimental data, aggregate data, analysis data, observational data, survey data, process-produced data, or other.		text	64		TRUE	TRUE	TRUE	TRUE	TRUE	FALSE		citation	http://rdf-vocabulary.ddialliance.org/discovery#kindOfData	
+	kindOfData	Kind of Data	Type of data included in the file: experimental data, aggregate data, analysis data, observational data, survey data, process-produced data, or other.		text	64		TRUE	FALSE	TRUE	TRUE	TRUE	FALSE		citation	http://rdf-vocabulary.ddialliance.org/discovery#kindOfData	
 	series	Series	Information about the Dataset series.		none	65	:	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		citation		
 	seriesName	Name	Name of the dataset series to which the Dataset belongs.		text	66	#VALUE	TRUE	FALSE	FALSE	TRUE	FALSE	FALSE	series	citation		
 	seriesInformation	Information	History of the series and summary of those features that apply to the series as a whole.		textbox	67	#VALUE	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	series	citation		
@@ -95,7 +95,7 @@
 	subject	Social Sciences	D11	12													
 	subject	Other	D12	13													
 	publicationIDType	ark		0													
-	publicationIDType	arXiv		1	arxiv												
+	publicationIDType	arXiv		1											
 	publicationIDType	bibcode		2													
 	publicationIDType	doi		3													
 	publicationIDType	ean13		4													
@@ -133,192 +133,195 @@
 	authorIdentifierScheme	LCNA		2													
 	authorIdentifierScheme	VIAF		3													
 	authorIdentifierScheme	GND		4													
-	language	Abkhaz		0													
-	language	Afar		1													
-	language	Afrikaans		2													
-	language	Akan		3													
-	language	Albanian		4													
-	language	Amharic		5													
-	language	Arabic		6													
-	language	Aragonese		7													
-	language	Armenian		8													
-	language	Assamese		9													
-	language	Avaric		10													
-	language	Avestan		11													
-	language	Aymara		12													
-	language	Azerbaijani		13													
-	language	Bambara		14													
-	language	Bashkir		15													
-	language	Basque		16													
-	language	Belarusian		17													
-	language	Bengali, Bangla		18													
-	language	Bihari		19													
-	language	Bislama		20													
-	language	Bosnian		21													
-	language	Breton		22													
-	language	Bulgarian		23													
-	language	Burmese		24													
-	language	Catalan,Valencian		25													
-	language	Chamorro		26													
-	language	Chechen		27													
-	language	Chichewa, Chewa, Nyanja		28													
-	language	Chinese		29													
-	language	Chuvash		30													
-	language	Cornish		31													
-	language	Corsican		32													
-	language	Cree		33													
-	language	Croatian		34													
-	language	Czech		35													
-	language	Danish		36													
-	language	Divehi, Dhivehi, Maldivian		37													
-	language	Dutch		38													
-	language	Dzongkha		39													
-	language	English		40													
-	language	Esperanto		41													
-	language	Estonian		42													
-	language	Ewe		43													
-	language	Faroese		44													
-	language	Fijian		45													
-	language	Finnish		46													
-	language	French		47													
-	language	Fula, Fulah, Pulaar, Pular		48													
-	language	Galician		49													
-	language	Georgian		50													
-	language	German		51													
-	language	Greek (modern)		52													
-	language	Guaran?�		53													
-	language	Gujarati		54													
-	language	Haitian, Haitian Creole		55													
-	language	Hausa		56													
-	language	Hebrew (modern)		57													
-	language	Herero		58													
-	language	Hindi		59													
-	language	Hiri Motu		60													
-	language	Hungarian		61													
-	language	Interlingua		62													
-	language	Indonesian		63													
-	language	Interlingue		64													
-	language	Irish		65													
-	language	Igbo		66													
-	language	Inupiaq		67													
-	language	Ido		68													
-	language	Icelandic		69													
-	language	Italian		70													
-	language	Inuktitut		71													
-	language	Japanese		72													
-	language	Javanese		73													
-	language	Kalaallisut, Greenlandic		74													
-	language	Kannada		75													
-	language	Kanuri		76													
-	language	Kashmiri		77													
-	language	Kazakh		78													
-	language	Khmer		79													
-	language	Kikuyu, Gikuyu		80													
-	language	Kinyarwanda		81													
-	language	Kyrgyz		82													
-	language	Komi		83													
-	language	Kongo		84													
-	language	Korean		85													
-	language	Kurdish		86													
-	language	Kwanyama, Kuanyama		87													
-	language	Latin		88													
-	language	Luxembourgish, Letzeburgesch		89													
-	language	Ganda		90													
-	language	Limburgish, Limburgan, Limburger		91													
-	language	Lingala		92													
-	language	Lao		93													
-	language	Lithuanian		94													
-	language	Luba-Katanga		95													
-	language	Latvian		96													
-	language	Manx		97													
-	language	Macedonian		98													
-	language	Malagasy		99													
-	language	Malay		100													
-	language	Malayalam		101													
-	language	Maltese		102													
-	language	M?�ori		103													
-	language	Marathi (Mar?��?�h?�)		104													
-	language	Marshallese		105													
-	language	Mixtepec Mixtec		106													
-	language	Mongolian		107													
-	language	Nauru		108													
-	language	Navajo, Navaho		109													
-	language	Northern Ndebele		110													
-	language	Nepali		111													
-	language	Ndonga		112													
-	language	Norwegian Bokm?�l		113													
-	language	Norwegian Nynorsk		114													
-	language	Norwegian		115													
-	language	Nuosu		116													
-	language	Southern Ndebele		117													
-	language	Occitan		118													
-	language	Ojibwe, Ojibwa		119													
-	language	Old Church Slavonic,Church Slavonic,Old Bulgarian		120													
-	language	Oromo		121													
-	language	Oriya		122													
-	language	Ossetian, Ossetic		123													
-	language	Panjabi, Punjabi		124													
-	language	P?�li		125													
-	language	Persian (Farsi)		126													
-	language	Polish		127													
-	language	Pashto, Pushto		128													
-	language	Portuguese		129													
-	language	Quechua		130													
-	language	Romansh		131													
-	language	Kirundi		132													
-	language	Romanian		133													
-	language	Russian		134													
-	language	Sanskrit (Sa�?�sk�?�ta)		135													
-	language	Sardinian		136													
-	language	Sindhi		137													
-	language	Northern Sami		138													
-	language	Samoan		139													
-	language	Sango		140													
-	language	Serbian		141													
-	language	Scottish Gaelic, Gaelic		142													
-	language	Shona		143													
-	language	Sinhala, Sinhalese		144													
-	language	Slovak		145													
-	language	Slovene		146													
-	language	Somali		147													
-	language	Southern Sotho		148													
-	language	Spanish, Castilian		149													
-	language	Sundanese		150													
-	language	Swahili		151													
-	language	Swati		152													
-	language	Swedish		153													
-	language	Tamil		154													
-	language	Telugu		155													
-	language	Tajik		156													
-	language	Thai		157													
-	language	Tigrinya		158													
-	language	Tibetan Standard, Tibetan, Central		159													
-	language	Turkmen		160													
-	language	Tagalog		161													
-	language	Tswana		162													
-	language	Tonga (Tonga Islands)		163													
-	language	Turkish		164													
-	language	Tsonga		165													
-	language	Tatar		166													
-	language	Twi		167													
-	language	Tahitian		168													
-	language	Uyghur, Uighur		169													
-	language	Ukrainian		170													
-	language	Urdu		171													
-	language	Uzbek		172													
-	language	Venda		173													
-	language	Vietnamese		174													
-	language	Volap??k		175													
-	language	Walloon		176													
-	language	Welsh		177													
-	language	Wolof		178													
-	language	Western Frisian		179													
-	language	Xhosa		180													
-	language	Yiddish		181													
-	language	Yoruba		182													
-	language	Zhuang, Chuang		183													
-	language	Zulu		184													
-	language	Not applicable		185													
+	authorIdentifierScheme	DAI		5
+	authorIdentifierScheme	ResearcherID		6
+	authorIdentifierScheme	ScopusID		7
+	language	Abkhaz		0
+	language	Afar		1											
+	language	Afrikaans		2											
+	language	Akan		3											
+	language	Albanian		4											
+	language	Amharic		5											
+	language	Arabic		6											
+	language	Aragonese		7											
+	language	Armenian		8											
+	language	Assamese		9											
+	language	Avaric		10											
+	language	Avestan		11											
+	language	Aymara		12											
+	language	Azerbaijani		13											
+	language	Bambara		14											
+	language	Bashkir		15											
+	language	Basque		16											
+	language	Belarusian		17											
+	language	Bengali, Bangla		18											
+	language	Bihari		19											
+	language	Bislama		20											
+	language	Bosnian		21											
+	language	Breton		22											
+	language	Bulgarian		23											
+	language	Burmese		24											
+	language	Catalan,Valencian		25											
+	language	Chamorro		26											
+	language	Chechen		27											
+	language	Chichewa, Chewa, Nyanja		28											
+	language	Chinese		29											
+	language	Chuvash		30											
+	language	Cornish		31											
+	language	Corsican		32											
+	language	Cree		33											
+	language	Croatian		34											
+	language	Czech		35											
+	language	Danish		36											
+	language	Divehi, Dhivehi, Maldivian		37											
+	language	Dutch		38											
+	language	Dzongkha		39											
+	language	English		40											
+	language	Esperanto		41											
+	language	Estonian		42											
+	language	Ewe		43											
+	language	Faroese		44											
+	language	Fijian		45											
+	language	Finnish		46											
+	language	French		47											
+	language	Fula, Fulah, Pulaar, Pular		48											
+	language	Galician		49											
+	language	Georgian		50											
+	language	German		51											
+	language	Greek (modern)		52											
+	language	Guaraní		53											
+	language	Gujarati		54											
+	language	Haitian, Haitian Creole		55											
+	language	Hausa		56											
+	language	Hebrew (modern)		57											
+	language	Herero		58											
+	language	Hindi		59											
+	language	Hiri Motu		60											
+	language	Hungarian		61											
+	language	Interlingua		62											
+	language	Indonesian		63											
+	language	Interlingue		64											
+	language	Irish		65											
+	language	Igbo		66											
+	language	Inupiaq		67											
+	language	Ido		68											
+	language	Icelandic		69											
+	language	Italian		70											
+	language	Inuktitut		71											
+	language	Japanese		72											
+	language	Javanese		73											
+	language	Kalaallisut, Greenlandic		74											
+	language	Kannada		75											
+	language	Kanuri		76											
+	language	Kashmiri		77											
+	language	Kazakh		78											
+	language	Khmer		79											
+	language	Kikuyu, Gikuyu		80											
+	language	Kinyarwanda		81											
+	language	Kyrgyz		82											
+	language	Komi		83											
+	language	Kongo		84											
+	language	Korean		85											
+	language	Kurdish		86											
+	language	Kwanyama, Kuanyama		87											
+	language	Latin		88											
+	language	Luxembourgish, Letzeburgesch		89											
+	language	Ganda		90											
+	language	Limburgish, Limburgan, Limburger		91											
+	language	Lingala		92											
+	language	Lao		93											
+	language	Lithuanian		94											
+	language	Luba-Katanga		95											
+	language	Latvian		96											
+	language	Manx		97											
+	language	Macedonian		98											
+	language	Malagasy		99											
+	language	Malay		100											
+	language	Malayalam		101											
+	language	Maltese		102											
+	language	Māori		103											
+	language	Marathi (Marāṭhī)		104											
+	language	Marshallese		105											
+	language	Mixtepec Mixtec		106									
+	language	Mongolian		107										
+	language	Nauru		108											
+	language	Navajo, Navaho		109											
+	language	Northern Ndebele		110											
+	language	Nepali		111											
+	language	Ndonga		112											
+	language	Norwegian Bokmål		113											
+	language	Norwegian Nynorsk		114											
+	language	Norwegian		115											
+	language	Nuosu		116											
+	language	Southern Ndebele		117											
+	language	Occitan		118											
+	language	Ojibwe, Ojibwa		119											
+	language	Old Church Slavonic,Church Slavonic,Old Bulgarian		120											
+	language	Oromo		121											
+	language	Oriya		122											
+	language	Ossetian, Ossetic		123											
+	language	Panjabi, Punjabi		124											
+	language	Pāli		125											
+	language	Persian (Farsi)		126											
+	language	Polish		127											
+	language	Pashto, Pushto		128											
+	language	Portuguese		129											
+	language	Quechua		130											
+	language	Romansh		131											
+	language	Kirundi		132											
+	language	Romanian		133											
+	language	Russian		134											
+	language	Sanskrit (Saṁskṛta)		135											
+	language	Sardinian		136											
+	language	Sindhi		137											
+	language	Northern Sami		138											
+	language	Samoan		139											
+	language	Sango		140											
+	language	Serbian		141											
+	language	Scottish Gaelic, Gaelic		142											
+	language	Shona		143											
+	language	Sinhala, Sinhalese		144											
+	language	Slovak		145											
+	language	Slovene		146											
+	language	Somali		147											
+	language	Southern Sotho		148											
+	language	Spanish, Castilian		149											
+	language	Sundanese		150											
+	language	Swahili		151											
+	language	Swati		152											
+	language	Swedish		153											
+	language	Tamil		154											
+	language	Telugu		155											
+	language	Tajik		156											
+	language	Thai		157											
+	language	Tigrinya		158											
+	language	Tibetan Standard, Tibetan, Central		159											
+	language	Turkmen		160											
+	language	Tagalog		161											
+	language	Tswana		162											
+	language	Tonga (Tonga Islands)		163											
+	language	Turkish		164											
+	language	Tsonga		165											
+	language	Tatar		166											
+	language	Twi		167											
+	language	Tahitian		168											
+	language	Uyghur, Uighur		169											
+	language	Ukrainian		170											
+	language	Urdu		171											
+	language	Uzbek		172											
+	language	Venda		173											
+	language	Vietnamese		174											
+	language	Volapük		175											
+	language	Walloon		176											
+	language	Welsh		177											
+	language	Wolof		178											
+	language	Western Frisian		179											
+	language	Xhosa		180											
+	language	Yiddish		181											
+	language	Yoruba		182											
+	language	Zhuang, Chuang		183											
+	language	Zulu		184											
+	language	Not applicable		185											
 	topicClassValue	Animal science	tnu:080	0
 	topicClassValue	Bilogical limnology and biological oceanography	tnu:034	1
 	topicClassValue	Bioclimatology	tnu:072	2
@@ -338,7 +341,7 @@
 	topicClassValue	General economy, macroeconomics	tnu:094	16
 	topicClassValue	Generalities	tnu:010	17
 	topicClassValue	Geology, surficial geology	tnu:064	18
-	topicClassValue	Halieutic resources	tnu:040	19
+	topicClassValue	Fishery resources	tnu:040	19
 	topicClassValue	Health  generalities	tnu:050	20
 	topicClassValue	Health in sociocultural, economic and political aspects	tnu:056	21
 	topicClassValue	Hydrology	tnu:062	22
@@ -361,10 +364,3 @@
 	topicClassValue	Studies, transformation, preservation of the natural environment	tnu:082	39
 	topicClassValue	Urbanization and urban societies	tnu:102	40
 	topicClassValue	Work	tnu:100	41
-	kindOfData	Experimental data		0
-	kindOfData	Aggregate data		1
-	kindOfData	Analysis data		2
-	kindOfData	Observational data		3
-	kindOfData	Survey data		4
-	kindOfData	Process-produced data		5
-	kindOfData	Other		6

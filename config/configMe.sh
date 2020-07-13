@@ -43,25 +43,30 @@ curl -X PUT -d DVLOCAL/ http://localhost:8080/api/admin/settings/:Shoulder
 # Metadatablocks
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/citation-tnu.tsv -H "Content-type: text/tab-separated-values"
 curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @$(dirname $0)/data/geospatial.tsv -H "Content-type: text/tab-separated-values"
-exit
+
+
 # Add role publisher
 curl -H "Content-type:application/json" -d @$(dirname $0)/data/role-publisher.json http://localhost:8080/api/admin/roles/
 
+
+rm -rf /opt/glassfish4/glassfish/domains/domain1/docroot/custom/
+cp -r $(dirname $0)/data /opt/glassfish4/glassfish/domains/domain1/docroot/custom
+
 # Branding
-#curl -X PUT -d  "$(dirname $0)/data/homePage.html" http://localhost:8080/api/admin/settings/:HomePageCustomizationFile
+curl -X PUT -d "/opt/glassfish4/glassfish/domains/domain1/docroot/custom/homePage.html" http://localhost:8080/api/admin/settings/:HomePageCustomizationFile
 
 # CSS
-curl -X PUT -d "$(dirname $0)/data/style.css" http://localhost:8080/api/admin/settings/:StyleCustomizationFile
+curl -X PUT -d "/opt/glassfish4/glassfish/domains/domain1/docroot/custom/style.css" http://localhost:8080/api/admin/settings/:StyleCustomizationFile
 
-mkdir -p /opt/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/
-cp -f $(dirname $0)/data/logo_IRD.png /opt/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/logo.png
-curl -X PUT -d '/logos/navbar/logo.png' http://localhost:8080/api/admin/settings/:LogoCustomizationFile
+mkdir -p /usr/local/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/
+cp /opt/glassfish4/glassfish/domains/domain1/docroot/custom/logo_IRD.png /usr/local/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/logo.png
+curl -X PUT -d "/logos/navbar/logo.png" http://localhost:8080/api/admin/settings/:LogoCustomizationFile
 
-#curl -X PUT -d "$(dirname $0)/data/header.html" http://localhost:8080/api/admin/settings/:HeaderCustomizationFile
+#curl -X PUT -d "/opt/glassfish4/glassfish/domains/domain1/docroot/custom/header.html" http://localhost:8080/api/admin/settings/:HeaderCustomizationFile
 
 #curl -X PUT -d 'true' http://localhost:8080/api/admin/settings/:DisableRootDataverseTheme # ne pas afficher le nom, le logo du dataverse root
 
-#curl -X PUT -d "$(dirname $0)/data/footer.html" http://localhost:8080/api/admin/settings/:FooterCustomizationFile
+curl -X PUT -d "/opt/glassfish4/glassfish/domains/domain1/docroot/custom/footer.html" http://localhost:8080/api/admin/settings/:FooterCustomizationFile
 
 curl -X PUT -d " - <a href='https://www.ird.fr' target='_blank'>IRD - Institut de recherche pour le développement - FRANCE</a>" http://localhost:8080/api/admin/settings/:FooterCopyright
 
