@@ -337,16 +337,16 @@
 	topicClassValue	Economy and sectors of activity	tnu:096	12
 	topicClassValue	Engineering  sciences, generalities	tnu:120	13
 	topicClassValue	Environmental sciences	tnu:021	14
-	topicClassValue	Fundamental sciences, analysis and research techniques	tnu:020	15
-	topicClassValue	General economy, macroeconomics	tnu:094	16
-	topicClassValue	Generalities	tnu:010	17
-	topicClassValue	Geology, surficial geology	tnu:064	18
-	topicClassValue	Fishery resources	tnu:040	19
+	topicClassValue	Fishery resources	tnu:040	15
+	topicClassValue	Fundamental sciences, analysis and research techniques	tnu:020	16
+	topicClassValue	General economy, macroeconomics	tnu:094	17
+	topicClassValue	Generalities	tnu:010	18
+	topicClassValue	Geology, surficial geology	tnu:064	19
 	topicClassValue	Health  generalities	tnu:050	20
 	topicClassValue	Health in sociocultural, economic and political aspects	tnu:056	21
 	topicClassValue	Hydrology	tnu:062	22
 	topicClassValue	Internal geophysics	tnu:066	23
-	topicClassValue	Limnology and oceanography: generalities	tnu:030	24
+	topicClassValue	Limnology and oceanography, generalities	tnu:030	24
 	topicClassValue	Medical entomology, parasitology and virology	tnu:052	25
 	topicClassValue	Natural substances	tnu:035	26
 	topicClassValue	Nutrition	tnu:054	27

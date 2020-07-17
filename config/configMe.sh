@@ -60,7 +60,7 @@ curl -X PUT -d "/opt/glassfish4/glassfish/domains/domain1/docroot/custom/style.c
 
 mkdir -p /usr/local/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/
 cp /opt/glassfish4/glassfish/domains/domain1/docroot/custom/logo_IRD.png /usr/local/glassfish4/glassfish/domains/domain1/docroot/logos/navbar/logo.png
-curl -X PUT -d "/logos/navbar/logo.png" http://localhost:8080/api/admin/settings/:LogoCustomizationFile
+#curl -X PUT -d "/logos/navbar/logo.png" http://localhost:8080/api/admin/settings/:LogoCustomizationFile
 
 #curl -X PUT -d "/opt/glassfish4/glassfish/domains/domain1/docroot/custom/header.html" http://localhost:8080/api/admin/settings/:HeaderCustomizationFile
 
